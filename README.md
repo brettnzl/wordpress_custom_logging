@@ -5,7 +5,7 @@ This is Simple to install:
 
 Add the following code to your functions.php or another included file:
 
-[code]
+<?php 
 if ( ! function_exists( 'my_custom_log_file' ) ) {
 	function my_custom_log_file( $entry ) { 
 		$file = 'my_custom_log_file';
@@ -35,5 +35,4 @@ if ( ! function_exists( 'my_custom_log_file' ) ) {
   }
 
   add_action( 'init', 'my_custom_log_file' );
-  
-  [/code]
+  ?>
