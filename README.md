@@ -5,7 +5,8 @@ This is Simple to install:
 
 Add the following code to your functions.php or another included file:
 
-<?php 
+
+```
 if ( ! function_exists( 'my_custom_log_file' ) ) {
 	function my_custom_log_file( $entry ) { 
 		$file = 'my_custom_log_file';
@@ -35,4 +36,42 @@ if ( ! function_exists( 'my_custom_log_file' ) ) {
   }
 
   add_action( 'init', 'my_custom_log_file' );
-  ?>
+
+```
+
+Then all you need to do is call the log function from anywhere in your code:
+
+Spacing: 
+```
+my_custom_log_file('------------------------------------------------------------------------------------------------------------------------------------');
+```
+
+Text/string: 
+```
+my_custom_log_file('This is a string log');
+```
+
+Variables: 
+```
+$test = 'this is a string';
+my_custom_log_file('What does the string say?' . $test);
+```
+
+array: 
+```
+my_custom_log_file(['test' => $data, 'test2' => $data2]);
+```
+
+obj: 
+```
+$obj = new stdObj;
+$obj->test = 'hi';
+$obj->test2 = 'hi2';
+
+my_custom_log_file($obj);
+```
+
+WordPress Actions: (displays current hook running)
+```
+my_custom_log_file(current_action());
+```
